@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HRM Management System</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>HRM Management System</h1>
+
+            <!-- ================= EMPLOYEE SECTION ================= -->
+            <section class="card">
+                <h2>Add Employee</h2>
+
+                <form id="employee-form">
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" id="emp-name" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Department</label>
+                        <input type="text" id="emp-dept" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Leave Balance</label>
+                        <input type="number" id="emp-balance" required
+                            min="0" />
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Create Employee
+                    </button>
+                </form>
+
+                <hr />
+
+                <button id="load-employees" class="btn-secondary">
+                    View All Employees
+                </button>
+
+                <table id="employee-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Department</th>
+                            <th>Leave Balance</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <!-- ================= LEAVE SECTION ================= -->
+            <section class="card">
+                <h2>Create Leave Request</h2>
+
+                <form id="leave-form">
+                    <div class="form-group">
+                        <label>Employee ID</label>
+                        <select id="leave-employeeId" required>
+                            <option value>-- Select Employee --</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input type="date" id="leave-startDate" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>End Date</label>
+                        <input type="date" id="leave-endDate" required />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Reason</label>
+                        <input type="text" id="leave-reason" required />
+                    </div>
+
+                    <button type="submit" class="btn-primary">
+                        Create Leave Request
+                    </button>
+                </form>
+
+                <hr />
+
+                <button id="load-leaves" class="btn-secondary">
+                    View All Leave Requests
+                </button>
+
+                <table id="leave-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Employee ID</th>
+                            <th>Start</th>
+                            <th>End</th>
+                            <th>Reason</th>
+                            <th>Status</th> <!-- Bonus column -->
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+        </div>
+        <div id="message"></div>
+        <!-- ENTRY FILE -->
+        <script type="module" src="./src/main.js"></script>
+
+    </body>
+</html>
