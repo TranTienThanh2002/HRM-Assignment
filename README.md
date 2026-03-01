@@ -15,7 +15,7 @@ http://localhost:3000
 
 cd frontend
 npm install
-npm start
+npm run dev
 
 ---
 
@@ -35,8 +35,8 @@ POST http://localhost:3000/employees
 Create leave:
 POST http://localhost:3000/leave
 {
-  "employeeId": "NV-123456",
-  "startDate": "2026-03-01",
-  "endDate": "2026-03-02",
-  "reason": "Vacation"
+  "employeeId": "NV-1772372879329",
+  "startDate": "2026-03-02",
+  "endDate": "2026-03-05",
+  "reason": "I'm sick"
 }

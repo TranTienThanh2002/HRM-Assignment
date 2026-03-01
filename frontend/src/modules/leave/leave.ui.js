@@ -2,10 +2,6 @@ import { leaveAPI } from "./leave.api.js";
 import { employeeAPI } from "../employee/employee.api.js";
 import { showMessage } from "../../core/ui.js";
 import {renderEmployees} from "../employee/employee.ui.js"
-/* =========================
-   RENDER TABLE
-========================= */
-
 export async function renderLeaves(container) {
   try {
     const data = await leaveAPI.getAll();
@@ -61,11 +57,6 @@ export async function renderLeaves(container) {
     console.error(err);
   }
 }
-
-/* =========================
-   BIND FORM
-========================= */
-
 export function bindLeaveForm(form, tableContainer) {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -102,11 +93,6 @@ export function bindLeaveForm(form, tableContainer) {
     }
   });
 }
-
-/* =========================
-   BIND APPROVE BUTTON
-========================= */
-
 export function bindApproveAction(container) {
   container.addEventListener("click", async (e) => {
     if (!e.target.classList.contains("approve-btn")) return;
@@ -122,11 +108,6 @@ export function bindApproveAction(container) {
     }
   });
 }
-
-/* =========================
-   BIND REJECT BUTTON
-========================= */
-
 export function bindRejectAction(container) {
   container.addEventListener("click", async (e) => {
     if (!e.target.classList.contains("reject-btn")) return;
